@@ -1,9 +1,44 @@
 import requests # for retriving json data
 import json # for parse json (not used for nwo)
 import random # for randomly select proxy and user agent
-import gray_harvest # for scrape available proxies
+import grey_harvest # for scrape available proxies
 
-def LoadUserAgents(uafile='db/user_agents.txt'):
+
+
+
+
+''' spawn a harvester '''
+harvester = grey_harvest.GreyHarvester()
+
+''' harvest some proxies from teh interwebz '''
+
+'''
+    each proxy item has following format: {'ip': '88.191.174.188', 'https': True, 'port': 80, 'latency': 9045, 'country': 'France'}
+'''
+
+print "searching for good proxies ip addresses..."
+
+proxies_list = []
+
+number_of_proxy = 2
+count = 0
+for proxy in harvester.run():
+    if proxy['https']:
+        proxies_list.append(proxy)
+        count += 1
+        if count >=number_of_proxy:
+                break
+
+
+# print proxies_list
+
+#####
+# Proxy format:
+# http://<USERNAME>:<PASSWORD>@<IP-ADDR>:<PORT>
+#####
+
+
+def LoadUserAgents(uafile='user_agents.txt'):
     """
     uafile : string
         path to text file of user agents, one per line
@@ -16,27 +51,13 @@ def LoadUserAgents(uafile='db/user_agents.txt'):
     random.shuffle(uas)
     return uas
 
+random_proxy = random.choice(proxies_list)
 
 
-''' spawn a harvester '''
-harvester = grey_harvest.GreyHarvester()
-
-''' harvest some proxies from teh interwebz '''
-count = 0
-for proxy in harvester.run():
-        print(proxy)
-        count += 1
-        if count >= 20:
-                break
-
-
-#####
-# Proxy format:
-# http://<USERNAME>:<PASSWORD>@<IP-ADDR>:<PORT>
-#####
 proxy = {
-    "http": "http://97.77.104.22:80",
+    "http": "http://"+random_proxy['ip']+":"+str(random_proxy['port']),
 }
+
 # load user agents and set headers
 uas = LoadUserAgents()
 ua = random.choice(uas)  # select a random user agent
@@ -53,7 +74,9 @@ r = requests.get(url, proxies=proxy,headers=headers)
 
 try:
     if r.status_code == 200:
-        
-        print(r.json())
+        jsonStr = json.dumps(r.json(), encoding='gbk', ensure_ascii=False).encode('gbk')
+        print jsonStr
 except ValueError as e:
-    print(e)
+    print e 
+
+
