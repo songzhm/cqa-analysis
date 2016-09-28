@@ -19,7 +19,7 @@ https://drive.google.com/open?id=0BxDbPR2yNrupTmQyX0JZX3lsNms
 * all answers by one user：http://apis.guokr.com/ask/answer.json?retrieve_type=by_user&ukey=[ukey]&limit=[limit]
 * all supporters for one answer: http://www.guokr.com/apis/ask/answer_supporting.json?retrieve_type=by_answer&answer_id=[aid]&limit=[limit]
 
-* URL pattern for all answers that one user support: http://www.guokr.com/ask/i/[ukey]/supporting_answers/
+* URL pattern for all answers that one user support: http://www.guokr.com/ask/i/[ukey]/supporting_answers/?page=[page_number]
 
 
 <h3>Setup</h3>
