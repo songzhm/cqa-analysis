@@ -2,40 +2,27 @@ import requests # for retriving json data
 import json # for parse json (not used for nwo)
 import random # for randomly select proxy and user agent
 import grey_harvest # for scrape available proxies
+import time
+
+def get_url_data(url,headers,proxy):
+    sess = requests.Session()
+    adapter = requests.adapters.HTTPAdapter(max_retries=1)
+    sess.mount('http://', adapter)
+    try:
+        print "retriving data using proxy", proxy
+        r = sess.get(url, proxies=proxy,headers=headers)
+        if r.status_code == 200:
+            print "get the data back, storing it ..."
+
+            return r.json()
+
+    except requests.exceptions.RequestException as e:  # This is the correct syntax
+        print "Failed, retry after 3 seconds ... "
+        time.sleep(3)
+        return get_url_data(url,headers,proxy)
 
 
 
-
-
-''' spawn a harvester '''
-harvester = grey_harvest.GreyHarvester()
-
-''' harvest some proxies from teh interwebz '''
-
-'''
-    each proxy item has following format: {'ip': '88.191.174.188', 'https': True, 'port': 80, 'latency': 9045, 'country': 'France'}
-'''
-
-print "searching for good proxies ip addresses..."
-
-proxies_list = []
-
-number_of_proxy = 2
-count = 0
-for proxy in harvester.run():
-    if proxy['https']:
-        proxies_list.append(proxy)
-        count += 1
-        if count >=number_of_proxy:
-                break
-
-
-# print proxies_list
-
-#####
-# Proxy format:
-# http://<USERNAME>:<PASSWORD>@<IP-ADDR>:<PORT>
-#####
 
 
 def LoadUserAgents(uafile='user_agents.txt'):
@@ -51,32 +38,54 @@ def LoadUserAgents(uafile='user_agents.txt'):
     random.shuffle(uas)
     return uas
 
-random_proxy = random.choice(proxies_list)
+
+''' spawn a harvester '''
+harvester = grey_harvest.GreyHarvester()
+
+''' harvest some proxies from teh interwebz '''
+
+print "searching for good proxies ip addresses..."
 
 
-proxy = {
-    "http": "http://"+random_proxy['ip']+":"+str(random_proxy['port']),
-}
+number_of_proxy = 5
+count = 0
+for proxy in harvester.run():
+    if proxy['https']:
 
-# load user agents and set headers
-uas = LoadUserAgents()
-ua = random.choice(uas)  # select a random user agent
-headers = {
-    "Connection" : "close",  # another way to cover tracks
-    "User-Agent" : ua}
-
-# make the request
-
-# now make the request
-url = 'http://apis.guokr.com/ask/question.json?retrieve_type=by_tag&tag_name=%E6%88%91%E5%A5%BD%E6%83%B3%E9%97%AE&limit=20'
-r = requests.get(url, proxies=proxy,headers=headers)
+        proxy_requests = {
+            "http": "http://"+proxy['ip']+":"+str(proxy['port']),
+        }
+        # load user agents and set headers
+        uas = LoadUserAgents()
+        ua = random.choice(uas)  # select a random user agent
+        headers = {
+            "Connection" : "close",  # another way to cover tracks
+            "User-Agent" : ua}
 
 
-try:
-    if r.status_code == 200:
-        jsonStr = json.dumps(r.json(), encoding='gbk', ensure_ascii=False).encode('gbk')
-        print jsonStr
-except ValueError as e:
-    print e 
+        # now make the request
+        url = 'http://apis.guokr.com/ask/question.json?retrieve_type=by_tag&tag_name=%E6%88%91%E5%A5%BD%E6%83%B3%E9%97%AE&limit=5&offset='+str(4*count)
+        res = get_url_data(url,headers,proxy_requests)
+        
+        with open(str(count+1)+'data.json', 'w') as fp:
+            json.dump(res, fp)
+
+        # try:
+        #     r = sess.get(url, proxies=proxy_requests,headers=headers)
+        #     if r.status_code == 200:
+        #         jsonStr = json.dumps(r.json(), encoding='gbk', ensure_ascii=False).encode('gbk')
+        #         print jsonStr
+
+        #         count+=1
+
+        # except requests.exceptions.RequestException as e:  # This is the correct syntax
+        #     print e
+        #     print "getting data failed! getting a new proxy address ... "
+        # for tick in range(5):
+        #     print "sleeping" + str(5-tick)
+        #     time.sleep(1)
+        count+=1
+    if count> number_of_proxy:
+        break
 
 
