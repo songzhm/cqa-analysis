@@ -1,0 +1,140 @@
+{
+    "now": "2016-09-29T05:12:26.981410+08:00",
+    "ok": true,
+    "result": {
+        "is_stared": false,
+        "is_answerable": true,
+        "tags": [
+            {
+                "is_editable": true,
+                "questions_count": 592,
+                "followers_count": 966,
+                "name": "梦",
+                "date_modified": "2012-08-03T19:03:04.021468+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E6%A2%A6/",
+                "date_created": "2012-08-03T19:03:04.021468+08:00",
+                "summary": "梦是人在特定睡眠阶段，大脑无意识地呈现的影像、观念、情绪及感觉。",
+                "icon": {
+                    "large": "http://2.im.guokr.com/gHPF7XTHANJIPZeyYJ9C1phJgcPA7cEq7xnyofM01-4wAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                    "small": "http://2.im.guokr.com/gHPF7XTHANJIPZeyYJ9C1phJgcPA7cEq7xnyofM01-4wAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                }
+            },
+            {
+                "is_editable": false,
+                "questions_count": 9512,
+                "followers_count": 362525,
+                "name": "心理学",
+                "date_modified": "2013-12-27T22:55:22.025729+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E5%BF%83%E7%90%86%E5%AD%A6/",
+                "date_created": "2012-08-03T19:03:04.021468+08:00",
+                "summary": "心理学是一门研究人类及动物的心理现象、精神功能和行为的科学，涉及知觉、认知、情绪、人格、行为和人际关系等许多领域，也与日常生活的许多领域——家庭、教育、健康等发生关联。",
+                "icon": {
+                    "large": "http://1.im.guokr.com/pNcxhX5S3wSs0Wp0dG07OVC07H3HmHYwiEbvleupOiswAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                    "small": "http://1.im.guokr.com/pNcxhX5S3wSs0Wp0dG07OVC07H3HmHYwiEbvleupOiswAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                }
+            },
+            {
+                "is_editable": true,
+                "questions_count": 157,
+                "followers_count": 106,
+                "name": "生物钟",
+                "date_modified": "2013-01-22T13:26:26.596570+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E7%94%9F%E7%89%A9%E9%92%9F/",
+                "date_created": "2012-08-03T19:03:04.021468+08:00",
+                "summary": "",
+                "icon": {
+                    "large": "http://1.im.guokr.com/HI35BJ4xFyLRcvpdr7ZuksHgiCNs4ez-0HWxe-l8Zl8wAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                    "small": "http://1.im.guokr.com/HI35BJ4xFyLRcvpdr7ZuksHgiCNs4ez-0HWxe-l8Zl8wAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                }
+            },
+            {
+                "is_editable": false,
+                "questions_count": 35585,
+                "followers_count": 9412,
+                "name": "生活",
+                "date_modified": "2013-07-24T13:48:51.060647+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E7%94%9F%E6%B4%BB/",
+                "date_created": "2012-08-03T19:03:04.010715+08:00",
+                "summary": "你吃泡面是为了生存，但是当你会挑剔应该加香肠还是卤蛋的时候，你就在生活",
+                "icon": {
+                    "large": "http://3.im.guokr.com/MSyUB5WXAidBeFG0hrAbjpZJ5uhFeQRP4DvUTx6vD64wAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                    "small": "http://3.im.guokr.com/MSyUB5WXAidBeFG0hrAbjpZJ5uhFeQRP4DvUTx6vD64wAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                }
+            },
+            {
+                "is_editable": true,
+                "questions_count": 10974,
+                "followers_count": 310442,
+                "name": "健康",
+                "date_modified": "2015-07-17T18:41:00.922349+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E5%81%A5%E5%BA%B7/",
+                "date_created": "2012-08-03T19:03:04.021468+08:00",
+                "summary": "<p>对人来说，健康不仅指身体方面无疾病、无缺陷，同样也包括良好的心理状态与社会关系。</p>",
+                "icon": {
+                    "large": "http://1.im.guokr.com/dWk35Ny-CzZvKtjAuMZveFj4j5cD47pIw9Aa4qT-PPQwAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                    "small": "http://1.im.guokr.com/dWk35Ny-CzZvKtjAuMZveFj4j5cD47pIw9Aa4qT-PPQwAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                }
+            },
+            {
+                "is_editable": true,
+                "questions_count": 1856,
+                "followers_count": 1619,
+                "name": "睡眠",
+                "date_modified": "2012-11-27T00:39:28.521566+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E7%9D%A1%E7%9C%A0/",
+                "date_created": "2012-08-03T19:03:04.021468+08:00",
+                "summary": "ZZZZZZZ......",
+                "icon": {
+                    "large": "http://3.im.guokr.com/rLeQRQhRAcVlQTjZ_vxFnRv7qRoAIDXtLqLNeXwVy90wAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                    "small": "http://3.im.guokr.com/rLeQRQhRAcVlQTjZ_vxFnRv7qRoAIDXtLqLNeXwVy90wAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                }
+            },
+            {
+                "is_editable": true,
+                "questions_count": 4,
+                "followers_count": 0,
+                "name": "嗜睡",
+                "date_modified": "2013-08-24T20:32:58.267994+08:00",
+                "url": "http://www.guokr.com/ask/tag/%E5%97%9C%E7%9D%A1/",
+                "date_created": "2013-08-24T20:32:58.267994+08:00",
+                "summary": "",
+                "icon": {
+                    "large": "http://3.im.guokr.com/_X6VuhMzX2uZ2hTQrdpBQlVQ51SK2hqu3aJIKb9Dt1cwAAAAMAAAAFBO.png?imageView2/1/w/48/h/48",
+                    "small": "http://3.im.guokr.com/_X6VuhMzX2uZ2hTQrdpBQlVQ51SK2hqu3aJIKb9Dt1cwAAAAMAAAAFBO.png?imageView2/1/w/24/h/24"
+                }
+            }
+        ],
+        "replies_count": 0,
+        "id": 648213,
+        "annotation_html": "",
+        "recommends_count": 0,
+        "author": {
+            "ukey": "mv98w7",
+            "is_title_authorized": false,
+            "nickname": "0七秒的记忆0",
+            "master_category": "normal",
+            "amended_reliability": "0",
+            "is_exists": true,
+            "title": "",
+            "url": "http://www.guokr.com/i/1382755399/",
+            "gender": null,
+            "followers_count": 0,
+            "avatar": {
+                "large": "http://2.im.guokr.com/Gc-UzC9HyWNySrdUsMy6ufy8tulY4rmYmK1BdmnarbagAAAAoAAAAEpQ.jpg?imageView2/1/w/160/h/160",
+                "small": "http://2.im.guokr.com/Gc-UzC9HyWNySrdUsMy6ufy8tulY4rmYmK1BdmnarbagAAAAoAAAAEpQ.jpg?imageView2/1/w/24/h/24",
+                "normal": "http://2.im.guokr.com/Gc-UzC9HyWNySrdUsMy6ufy8tulY4rmYmK1BdmnarbagAAAAoAAAAEpQ.jpg?imageView2/1/w/48/h/48"
+            },
+            "ask_profile": "http://www.guokr.com/ask/i/1382755399/",
+            "resource_url": "http://apis.guokr.com/community/user/mv98w7.json"
+        },
+        "url": "http://www.guokr.com/question/648213/",
+        "question": "爱睡觉到底是啥情况，这么多年的困扰啥时候能结束，不睡的时候就想找找原因，就怕一会儿睡着了又给忘记了，现在的我已经冲一百斤的瘦子，长成了一百八的胖子。。是不是真的没有方法了？",
+        "summary": "如果已经影响生活了去正规医院看看相关科室（脑科、神经科、精神科都有可能），如果这个医院治不好就去更好的,不要百度医院",
+        "date_last_answered": "2016-09-27T18:57:57.669981+08:00",
+        "followers_count": 2,
+        "archives_count": 1,
+        "date_created": "2016-09-27T13:37:05.074863+08:00",
+        "annotation": "",
+        "answers_count": 2
+    }
+}

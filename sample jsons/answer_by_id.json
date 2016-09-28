@@ -1,0 +1,185 @@
+{
+    "now": "2016-09-29T05:16:01.748646+08:00",
+    "ok": true,
+    "result": {
+        "pollings_count": 200,
+        "replies_count": 45,
+        "summary": "修电脑真的不是程序员的老本行 = =",
+        "id": 716179,
+        "opposings_count": 1,
+        "current_user_has_supported": false,
+        "current_user_has_buried": false,
+        "date_modified": "2016-09-27T17:13:10.832998+08:00",
+        "url": "http://www.guokr.com/answer/716179/redirect/",
+        "current_user_has_opposed": false,
+        "author": {
+            "ukey": "knrpyt",
+            "is_title_authorized": false,
+            "nickname": "匿名用户-_-",
+            "master_category": "normal",
+            "amended_reliability": "0",
+            "is_exists": true,
+            "title": "小学生",
+            "url": "http://www.guokr.com/i/1249248053/",
+            "gender": null,
+            "followers_count": 0,
+            "avatar": {
+                "large": "http://1.im.guokr.com/aivcW30s5EXE7yGZOqlddoiOfgnJAPBND6Ex18vYZGSgAAAAoAAAAEpQ.jpg?imageView2/1/w/160/h/160",
+                "small": "http://1.im.guokr.com/aivcW30s5EXE7yGZOqlddoiOfgnJAPBND6Ex18vYZGSgAAAAoAAAAEpQ.jpg?imageView2/1/w/24/h/24",
+                "normal": "http://1.im.guokr.com/aivcW30s5EXE7yGZOqlddoiOfgnJAPBND6Ex18vYZGSgAAAAoAAAAEpQ.jpg?imageView2/1/w/48/h/48"
+            },
+            "ask_profile": "http://www.guokr.com/ask/i/1249248053/",
+            "resource_url": "http://apis.guokr.com/community/user/knrpyt.json"
+        },
+        "question": {
+            "is_stared": true,
+            "tags": [
+                {
+                    "is_editable": true,
+                    "questions_count": 2526,
+                    "followers_count": 3424,
+                    "name": "历史",
+                    "date_modified": "2014-05-10T23:46:36.281011+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E5%8E%86%E5%8F%B2/",
+                    "date_created": "2012-08-03T19:03:04.021468+08:00",
+                    "summary": "历史，或简称旧史，是对过去人类做过的事进行总结；多数时候也是对当下时代的映射。如果仅仅只是总结和映射，那么历史作为一个存在，就应该消失。历史的问题在于不断发现真的过去，在于用材料说话，让人如何在现实中可能成为可以讨论的问题。",
+                    "icon": {
+                        "large": "http://1.im.guokr.com/N5uruywmV9h6XU8F98ROVfCC-0VU9gT0bSJyvcdJ8tMwAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://1.im.guokr.com/N5uruywmV9h6XU8F98ROVfCC-0VU9gT0bSJyvcdJ8tMwAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": true,
+                    "questions_count": 5084,
+                    "followers_count": 11049,
+                    "name": "互联网",
+                    "date_modified": "2016-09-08T16:34:47.787274+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E4%BA%92%E8%81%94%E7%BD%91/",
+                    "date_created": "2012-08-03T19:03:04.010715+08:00",
+                    "summary": "<p>互联网（英语：internet），是网络 与网络之间所串连成的庞大网络，这些网络以一组标准的网络TCP/IP协议族 相连，链接全世界几十亿个设备，形成逻辑上的单一巨大国际网络。这是一个网络的网络，它是由从地方到全球范围内几百万个私人的，学术界的，企业的和政府的 网络所构成，通过电子，无线和光纤...",
+                    "icon": {
+                        "large": "http://3.im.guokr.com/4wyxuAy-YPkRshjvStzeuQUO8rMaiL9W1GO3XLSaRSIwAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://3.im.guokr.com/4wyxuAy-YPkRshjvStzeuQUO8rMaiL9W1GO3XLSaRSIwAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": true,
+                    "questions_count": 1863,
+                    "followers_count": 206217,
+                    "name": "法律",
+                    "date_modified": "2012-09-12T15:49:30.002464+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E6%B3%95%E5%BE%8B/",
+                    "date_created": "2012-08-03T19:03:04.021468+08:00",
+                    "summary": "法律是一种具有普遍约束力的社会规范，它赋予人们权利与义务，由国家强制力保证实施。",
+                    "icon": {
+                        "large": "http://1.im.guokr.com/g8xc5jXjXHKcWDahyAmR3Kuhxqp-aJ8y_e7CC-6vAfEwAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://1.im.guokr.com/g8xc5jXjXHKcWDahyAmR3Kuhxqp-aJ8y_e7CC-6vAfEwAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": true,
+                    "questions_count": 5434,
+                    "followers_count": 4394,
+                    "name": "人文",
+                    "date_modified": "2015-11-10T10:40:17.471852+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E4%BA%BA%E6%96%87/",
+                    "date_created": "2012-08-03T19:03:04.010715+08:00",
+                    "summary": "<p>人文就是人类文化中的先进部分和核心部分，即先进的价值观及其规范。其集中体现是，重视人，尊重人，关心人，爱护人。简而言之，人文，即重视人的文化。哎哎哎</p>",
+                    "icon": {
+                        "large": "http://3.im.guokr.com/58VCWowgAY7H4W7u1zCJTQPdXas8Tn9bUk0kgyTQVRcwAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://3.im.guokr.com/58VCWowgAY7H4W7u1zCJTQPdXas8Tn9bUk0kgyTQVRcwAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": true,
+                    "questions_count": 407,
+                    "followers_count": 468,
+                    "name": "经济",
+                    "date_modified": "2014-01-03T11:59:24.222357+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E7%BB%8F%E6%B5%8E/",
+                    "date_created": "2012-08-03T19:03:04.021468+08:00",
+                    "summary": "经济，是指一定范围（国家、区域）内，组织一切生产、分配、流通和消费活动与关系的系统之总称。而研究经济问题、探讨经济发展规律、解释经济现象成因的社会科学即称为经济学。",
+                    "icon": {
+                        "large": "http://3.im.guokr.com/_X6VuhMzX2uZ2hTQrdpBQlVQ51SK2hqu3aJIKb9Dt1cwAAAAMAAAAFBO.png?imageView2/1/w/48/h/48/format/PNG",
+                        "small": "http://1.im.guokr.com/tgAflY6_E7QPNrQkUpgbE_0i_ad_kgyGgai4mB309EwwAAAAKQAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": false,
+                    "questions_count": 35585,
+                    "followers_count": 9412,
+                    "name": "生活",
+                    "date_modified": "2013-07-24T13:48:51.060647+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E7%94%9F%E6%B4%BB/",
+                    "date_created": "2012-08-03T19:03:04.010715+08:00",
+                    "summary": "你吃泡面是为了生存，但是当你会挑剔应该加香肠还是卤蛋的时候，你就在生活",
+                    "icon": {
+                        "large": "http://3.im.guokr.com/MSyUB5WXAidBeFG0hrAbjpZJ5uhFeQRP4DvUTx6vD64wAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://3.im.guokr.com/MSyUB5WXAidBeFG0hrAbjpZJ5uhFeQRP4DvUTx6vD64wAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": false,
+                    "questions_count": 9512,
+                    "followers_count": 362525,
+                    "name": "心理学",
+                    "date_modified": "2013-12-27T22:55:22.025729+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E5%BF%83%E7%90%86%E5%AD%A6/",
+                    "date_created": "2012-08-03T19:03:04.021468+08:00",
+                    "summary": "心理学是一门研究人类及动物的心理现象、精神功能和行为的科学，涉及知觉、认知、情绪、人格、行为和人际关系等许多领域，也与日常生活的许多领域——家庭、教育、健康等发生关联。",
+                    "icon": {
+                        "large": "http://1.im.guokr.com/pNcxhX5S3wSs0Wp0dG07OVC07H3HmHYwiEbvleupOiswAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://1.im.guokr.com/pNcxhX5S3wSs0Wp0dG07OVC07H3HmHYwiEbvleupOiswAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                },
+                {
+                    "is_editable": true,
+                    "questions_count": 1973,
+                    "followers_count": 3361,
+                    "name": "大学",
+                    "date_modified": "2016-05-05T17:36:07.560342+08:00",
+                    "url": "http://www.guokr.com/ask/tag/%E5%A4%A7%E5%AD%A6/",
+                    "date_created": "2012-08-03T19:03:04.021468+08:00",
+                    "summary": "<p><strong>大学的</strong><strong>释义</strong><strong>有三：</strong></p>\n<p>&nbsp;</p>\n<p>一、泛指实施高等教育的学校，指提供教学和研究条件和授权颁发学位的高等教育机关，包括综合性大学、学院、高职高专等。</p>\n<p>&n...",
+                    "icon": {
+                        "large": "http://2.im.guokr.com/sjMxaLWmfweyboi5711zKv_mlGxvhVN84gTU_76TfMkwAAAAMAAAAEpQ.jpg?imageView2/1/w/48/h/48",
+                        "small": "http://2.im.guokr.com/sjMxaLWmfweyboi5711zKv_mlGxvhVN84gTU_76TfMkwAAAAMAAAAEpQ.jpg?imageView2/1/w/24/h/24"
+                    }
+                }
+            ],
+            "id": 565900,
+            "author": {
+                "ukey": "m4pfsq",
+                "is_title_authorized": false,
+                "nickname": "stilljay",
+                "master_category": "normal",
+                "amended_reliability": "0",
+                "is_exists": true,
+                "title": "",
+                "url": "http://www.guokr.com/i/1338161210/",
+                "gender": null,
+                "followers_count": 1,
+                "avatar": {
+                    "large": "http://1.im.guokr.com/IiwiRojtSDo5S8cppkMaMg_cUYfYnpNkbxJCUF9KGwugAAAAoAAAAEpQ.jpg?imageView2/1/w/160/h/160",
+                    "small": "http://1.im.guokr.com/IiwiRojtSDo5S8cppkMaMg_cUYfYnpNkbxJCUF9KGwugAAAAoAAAAEpQ.jpg?imageView2/1/w/24/h/24",
+                    "normal": "http://1.im.guokr.com/IiwiRojtSDo5S8cppkMaMg_cUYfYnpNkbxJCUF9KGwugAAAAoAAAAEpQ.jpg?imageView2/1/w/48/h/48"
+                },
+                "ask_profile": "http://www.guokr.com/ask/i/1338161210/",
+                "resource_url": "http://apis.guokr.com/community/user/m4pfsq.json"
+            },
+            "url": "http://www.guokr.com/question/565900/",
+            "question": "有哪些在你的认知圈子里是理所当然，在大众看来却是匪夷所思的事情？",
+            "summary": "修电脑真的不是程序员的老本行 = =",
+            "date_last_answered": "2016-09-25T09:46:08.995378+08:00",
+            "followers_count": 348,
+            "date_created": "2014-06-29T02:47:23.025295+08:00",
+            "answers_count": 262
+        },
+        "supportings_count": 201,
+        "content": "修电脑真的不是程序员的老本行 = =",
+        "html": "<p>修电脑真的不是程序员的老本行 = =</p>",
+        "current_user_has_thanked": false,
+        "date_created": "2014-06-30T08:08:08.366298+08:00",
+        "buryings_count": 2
+    }
+}

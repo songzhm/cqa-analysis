@@ -1,0 +1,44 @@
+{
+    "now": "2016-09-29T03:02:18.410187+08:00",
+    "ok": true,
+    "result": {
+        "answers_count": 25,
+        "activities_count": 220,
+        "badge_counts": {
+            "copper": 26,
+            "total": 37,
+            "silver": 7,
+            "gold": 4
+        },
+        "master_introduction": "",
+        "followings_count": 39,
+        "event_videos_count": 0,
+        "ukey": "k6jm8r",
+        "answer_supports_count": 25,
+        "is_title_authorized": false,
+        "nickname": "WangNianyi2001",
+        "master_category": "normal",
+        "questions_count": 8,
+        "city": "东城区",
+        "amended_reliability": null,
+        "title": "",
+        "url": "http://www.guokr.com/i/1220316507/",
+        "gender": "male",
+        "area": "北京",
+        "blog_title": "My Journal",
+        "taggings": [],
+        "introduction": "来自帝都的初中生",
+        "followers_count": 39,
+        "blogs_count": 0,
+        "avatar": {
+            "large": "http://3.im.guokr.com/E9bB7aLFBCUZ48rzG4f8U6MZu2wBSujwFdkcI-EUoAKgAAAAoAAAAEpQ.jpg?imageView2/1/w/160/h/160",
+            "small": "http://3.im.guokr.com/E9bB7aLFBCUZ48rzG4f8U6MZu2wBSujwFdkcI-EUoAKgAAAAoAAAAEpQ.jpg?imageView2/1/w/24/h/24",
+            "normal": "http://3.im.guokr.com/E9bB7aLFBCUZ48rzG4f8U6MZu2wBSujwFdkcI-EUoAKgAAAAoAAAAEpQ.jpg?imageView2/1/w/48/h/48"
+        },
+        "blog_url": "",
+        "date_created": "2014-09-10T16:17:57.842008+08:00",
+        "resource_url": "http://apis.guokr.com/community/user/k6jm8r.json",
+        "baskets_count": 1,
+        "posts_count": 65
+    }
+}
