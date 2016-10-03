@@ -47,45 +47,53 @@ harvester = grey_harvest.GreyHarvester()
 print "searching for good proxies ip addresses..."
 
 
-number_of_proxy = 5
+number_of_proxy = 100
 count = 0
+
+proxies_list=[]
+
 for proxy in harvester.run():
     if proxy['https']:
-
-        proxy_requests = {
-            "http": "http://"+proxy['ip']+":"+str(proxy['port']),
-        }
-        # load user agents and set headers
-        uas = LoadUserAgents()
-        ua = random.choice(uas)  # select a random user agent
-        headers = {
-            "Connection" : "close",  # another way to cover tracks
-            "User-Agent" : ua}
-
-
-        # now make the request
-        url = 'http://apis.guokr.com/ask/question.json?retrieve_type=by_tag&tag_name=%E6%88%91%E5%A5%BD%E6%83%B3%E9%97%AE&limit=5&offset='+str(4*count)
-        res = get_url_data(url,headers,proxy_requests)
         
-        with open(str(count+1)+'data.json', 'w') as fp:
-            json.dump(res, fp)
+        proxies_list.append(proxy)
 
-        # try:
-        #     r = sess.get(url, proxies=proxy_requests,headers=headers)
-        #     if r.status_code == 200:
-        #         jsonStr = json.dumps(r.json(), encoding='gbk', ensure_ascii=False).encode('gbk')
-        #         print jsonStr
+        # proxy_requests = {
+        #     "http": "http://"+proxy['ip']+":"+str(proxy['port']),
+        # }
+        # # load user agents and set headers
+        # uas = LoadUserAgents()
+        # ua = random.choice(uas)  # select a random user agent
+        # headers = {
+        #     "Connection" : "close",  # another way to cover tracks
+        #     "User-Agent" : ua}
 
-        #         count+=1
 
-        # except requests.exceptions.RequestException as e:  # This is the correct syntax
-        #     print e
-        #     print "getting data failed! getting a new proxy address ... "
-        # for tick in range(5):
-        #     print "sleeping" + str(5-tick)
-        #     time.sleep(1)
+        # # now make the request
+        # url = 'http://apis.guokr.com/ask/question.json?retrieve_type=by_tag&tag_name=%E6%88%91%E5%A5%BD%E6%83%B3%E9%97%AE&limit=5&offset='+str(4*count)
+        # res = get_url_data(url,headers,proxy_requests)
+        
+        # with open(str(count+1)+'data.json', 'w') as fp:
+        #     json.dump(res, fp)
+
+        # # try:
+        # #     r = sess.get(url, proxies=proxy_requests,headers=headers)
+        # #     if r.status_code == 200:
+        # #         jsonStr = json.dumps(r.json(), encoding='gbk', ensure_ascii=False).encode('gbk')
+        # #         print jsonStr
+
+        # #         count+=1
+
+        # # except requests.exceptions.RequestException as e:  # This is the correct syntax
+        # #     print e
+        # #     print "getting data failed! getting a new proxy address ... "
+        # # for tick in range(5):
+        # #     print "sleeping" + str(5-tick)
+        # #     time.sleep(1)
         count+=1
+        print(count)
     if count> number_of_proxy:
         break
+
+print(proxies_list)
 
 
