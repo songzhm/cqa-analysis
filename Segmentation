@@ -1,0 +1,8 @@
+from nltk.tokenize.stanford_segmenter import StanfordSegmenter
+
+#https://www.quora.com/How-does-Python-NLTK-process-Chinese
+
+segmenter = StanfordSegmenter(path_to_jar='C:\\Users\\MSI CES 2014\\Desktop\\Goukr\\stanford-segmenter-2015-12-09\\stanford-segmenter-3.6.0.jar',
+                               path_to_sihan_corpora_dict='', path_to_model='', path_to_dict='C:\\Users\\MSI CES 2014\\Desktop\Goukr\dict-chris6.ser.gz')
+
+sentence = u"如果已经影响生活了去正规医院看看相关科室（脑科、神经科、精神科都有可能），如果这个医院治不好就去更好的,不要百度医院"
