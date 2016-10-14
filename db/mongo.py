@@ -10,8 +10,8 @@ from pprint import pprint
 client = MongoClient()
 db = client.test
 
-db.questionByTag.delete_many({})
-db.answerByQuestion.delete_many({})
+# db.questionByTag.delete_many({})
+# db.answerByQuestion.delete_many({})
 
 print db.questionByTag.count()
 print db.answerByQuestion.count()

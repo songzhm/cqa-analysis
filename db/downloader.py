@@ -160,7 +160,7 @@ LIMIT = 200
 #     json.dump(res, fp)
 client = MongoClient()
 db = client.test
-usring_proxy = False
+usring_proxy = True
 for count in range(len(tags)):
     tag = tags[count]
     print 'getting total question numbers under current tag...'
