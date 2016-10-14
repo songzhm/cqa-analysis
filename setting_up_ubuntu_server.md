@@ -48,3 +48,8 @@
 
 ## 7. [Install MongoDB on Ubuntu 16.04](https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu-16.04/)
 
+## 8. clone github repository
+
+1. `git clone -- https://github.com/songzhm/cqa-analysis.git`
+
+2. `cd cqa-analysis`
