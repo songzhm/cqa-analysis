@@ -10,30 +10,32 @@ from pprint import pprint
 client = MongoClient()
 db = client.test
 
-# db.questionByTag.delete_many({})
-# db.answerByQuestion.delete_many({})
+db.questionByTag.delete_many({})
+db.answerByQuestion.delete_many({})
+db.userProfile.delete_many({})
 
 print db.questionByTag.count()
 print db.answerByQuestion.count()
+print db.userProfile.count()
 
 
-# query data
-cursor = db.questionByTag.find()
+# # query data
+# cursor = db.questionByTag.find()
 
-question_threshold = 1
-count = 0
-for document in cursor:
-    pprint(document)
-    count+=1
-    if count>=question_threshold:
-        break
+# question_threshold = 1
+# count = 0
+# for document in cursor:
+#     pprint(document)
+#     count+=1
+#     if count>=question_threshold:
+#         break
 
-cursor = db.answerByQuestion.find()
+# cursor = db.answerByQuestion.find()
 
-answer_threshold = 1
-count = 0
-for document in cursor:
-    pprint(document)
-    count+=1
-    if count>=answer_threshold:
-        break
+# answer_threshold = 1
+# count = 0
+# for document in cursor:
+#     pprint(document)
+#     count+=1
+#     if count>=answer_threshold:
+#         break
