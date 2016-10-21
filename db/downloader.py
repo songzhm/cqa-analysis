@@ -182,7 +182,7 @@ for count in range(len(tags)):
         question_list = res['result']
         if len(question_list)>0:
             
-            # response = db.questionByTag.insert_many(question_list)
+            response = db.questionByTag.insert_many(question_list)
 
             # print 'retriving answers data now...'
             
@@ -198,7 +198,7 @@ for count in range(len(tags)):
                 query = {'id': q_id}
                 content = {key:value for key,value in question_content.iteritems() if key != 'id'}
 
-                response = db.questionByTag.update_one(
+                response = db.questionById.update_one(
                     query,
                     {'$set': content},
                     upsert = True
@@ -214,7 +214,7 @@ for count in range(len(tags)):
                     query = {'ukey':q_author_ukey}
                     content = {key:value for key,value in author_profile.iteritems() if key != 'ukey'}
 
-                    response = db.userProfile.update_one(
+                    response = db.userById.update_one(
                         query,
                         {'$set': content},
                         upsert = True
@@ -264,7 +264,7 @@ for count in range(len(tags)):
                                 query = {'ukey':a_author_ukey}
                                 content = {key:value for key,value in author_profile.iteritems() if key != 'ukey'}
 
-                                response = db.userProfile.update_one(
+                                response = db.userById.update_one(
                                     query,
                                     {'$set': content},
                                     upsert = True
@@ -286,6 +286,7 @@ for count in range(len(tags)):
                                 supporter_list = res['result']
                                 if len(supporter_list)>0:
                                     print 'insert supporter data...'
+                                    response = db.supporterByAnswer.insert_many(supporter_list)
                                     s_sleep_time = random.choice(range(1,6))
                                     for supporter in supporter_list:
                                         ukey = supporter['user_polling']['ukey']
@@ -298,7 +299,7 @@ for count in range(len(tags)):
                                             query = {'ukey':ukey}
                                             content = {key:value for key,value in supporter_profile.iteritems() if key != 'ukey'}
 
-                                            response = db.userProfile.update_one(
+                                            response = db.userById.update_one(
                                                 query,
                                                 {'$set': content},
                                                 upsert = True

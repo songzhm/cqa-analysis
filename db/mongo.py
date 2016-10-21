@@ -11,12 +11,18 @@ client = MongoClient()
 db = client.test
 
 db.questionByTag.delete_many({})
+db.questionById.delete_many({})
 db.answerByQuestion.delete_many({})
-db.userProfile.delete_many({})
+db.supporterByAnswer.delete_many({})
+db.userById.delete_many({})
 
 print db.questionByTag.count()
+print db.questionById.count()
+
 print db.answerByQuestion.count()
-print db.userProfile.count()
+print db.supporterByAnswer.count()
+
+print db.userById.count()
 
 
 # # query data
