@@ -53,3 +53,10 @@
 1. `git clone -- https://github.com/songzhm/cqa-analysis.git`
 
 2. `cd cqa-analysis`
+
+## 9. [Install MariaDB on Ubuntu 16.04](https://www.linuxbabe.com/linux-server/install-apache-mariadb-and-php7-lamp-stack-on-ubuntu-16-04-lts)
+
+## 10. INstall MySQL-python package:
+
+    `sudo apt-get install python-mysql.connector`
+
