@@ -24,4 +24,8 @@ mariadb_connection.close()
 
 
 def insertQuestion(cursor,data):
+    cursor.execute("INSERT INTO QUESTION (QUESTION_ID,\
+    USER_ID, QUESTION, SUMMARY, ANSWER_COUNT, FOLLOWER_COUNT, \
+    ARCHIVE_COUNT,DATA_CREATED,DATA_LAST_ANSWERED,QUESTION_URL,\
+    TAG,REPLY_COUNT,RECOMMEND_COUNT) VALUES ({},{},{},{},{},{},{},{},{},{},{},{},{})".format(data['id'],data['author']['ukey']))
     

@@ -193,8 +193,8 @@ for count in range(len(tags)):
                 url = 'http://apis.guokr.com/ask/question/'+str(q_id)+'.json'
                 res = get_url_data(url,usring_proxy)
                 question_content = res['result']
-                with open('question.json','w') as file:
-                    json.dump(question_content,file)
+                # with open('question.json','w') as file:
+                #     json.dump(question_content,file)
 
 
                 query = {'id': q_id}
