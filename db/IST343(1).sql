@@ -1,5 +1,5 @@
 /*
- Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
  Source Server         : MySQL
  Source Server Type    : MySQL
@@ -11,7 +11,7 @@
  Target Server Version : 50716
  File Encoding         : utf-8
 
- Date: 11/01/2016 13:59:26 PM
+ Date: 11/04/2016 19:11:14 PM
 */
 
 SET NAMES utf8mb4;
@@ -22,11 +22,12 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `ANSWER`;
 CREATE TABLE `ANSWER` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ANSWER_ID` varchar(255) NOT NULL,
   `QUESTION_ID` varchar(255) NOT NULL,
   `USER_ID` varchar(255) NOT NULL,
   `CONTENT` varchar(255) NOT NULL,
+  `ANSWER_HTML` varchar(255) NOT NULL,
   `USER_HAS_SUPPORTED` varchar(255) NOT NULL,
   `UPVOTING` int(11) NOT NULL,
   `DOWNVOTING` int(11) NOT NULL,
@@ -35,40 +36,37 @@ CREATE TABLE `ANSWER` (
   `DATA_MODIFIED` datetime NOT NULL,
   `ANSWER_URL` varchar(255) NOT NULL,
   `OPPOSING_COUNT` int(11) NOT NULL,
-  `ANSWER_HTML` varchar(255) NOT NULL,
   `BURYING_COUNT` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
   KEY `QUESTION_ID` (`QUESTION_ID`),
-  KEY `ANSWER_ID` (`ANSWER_ID`),
   KEY `USER_ID` (`USER_ID`),
-  CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`QUESTION_ID`) REFERENCES `QUESTION` (`QUESTION_ID`),
-  CONSTRAINT `answer_ibfk_2` FOREIGN KEY (`USER_ID`) REFERENCES `USER_PROFILE` (`USER_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `ANSWER_ID` (`ANSWER_ID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `ANSWER_SUPPORT`
 -- ----------------------------
 DROP TABLE IF EXISTS `ANSWER_SUPPORT`;
 CREATE TABLE `ANSWER_SUPPORT` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `USER_ID` varchar(255) NOT NULL,
   `ANSWER_ID` varchar(255) NOT NULL,
   `QUESTION_ID` varchar(255) NOT NULL,
   `DATA_CREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ASK_PROFILE` varchar(255) NOT NULL,
-  `RESOURE_URL` varchar(255) NOT NULL,
   `OPINION` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`),
   KEY `ANSWER_ID` (`ANSWER_ID`),
-  KEY `USER_ID` (`USER_ID`),
-  CONSTRAINT `answer_support_ibfk_1` FOREIGN KEY (`ANSWER_ID`) REFERENCES `ANSWER` (`ANSWER_ID`),
-  CONSTRAINT `answer_support_ibfk_2` FOREIGN KEY (`USER_ID`) REFERENCES `USER_PROFILE` (`USER_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `USER_ID` (`USER_ID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `QUESTION`
 -- ----------------------------
 DROP TABLE IF EXISTS `QUESTION`;
 CREATE TABLE `QUESTION` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `QUESTION_ID` varchar(255) NOT NULL,
   `USER_ID` varchar(255) NOT NULL,
   `QUSETION` varchar(255) NOT NULL,
@@ -79,20 +77,39 @@ CREATE TABLE `QUESTION` (
   `DATA_CREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `DATA_LAST_ANSWERED` datetime NOT NULL,
   `QUESTION_URL` varchar(255) NOT NULL,
-  `TAG` varchar(255) DEFAULT NULL,
   `REPLY_COUNT` int(11) DEFAULT NULL,
   `RECOMMEND_COUNT` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
   KEY `QUESTION_ID` (`QUESTION_ID`),
-  KEY `USER_ID` (`USER_ID`),
-  CONSTRAINT `question_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `USER_PROFILE` (`USER_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `USER_ID` (`USER_ID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `TAG`
+-- ----------------------------
+DROP TABLE IF EXISTS `TAG`;
+CREATE TABLE `TAG` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `QUESTION_ID` varchar(255) NOT NULL,
+  `TAG_NAME` varchar(255) NOT NULL,
+  `SUMMARY` varchar(255) NOT NULL,
+  `QUESTION_COUNT` int(11) NOT NULL,
+  `FOLLOWER_COUNT` int(11) NOT NULL,
+  `DATE_CREATED` datetime NOT NULL,
+  `DATE_MODIFIED` datetime NOT NULL,
+  `TAG_URL` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `QUESTION_ID` (`QUESTION_ID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `USER_PROFILE`
 -- ----------------------------
 DROP TABLE IF EXISTS `USER_PROFILE`;
 CREATE TABLE `USER_PROFILE` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `USER_ID` varchar(255) NOT NULL,
   `NICKNAME` varchar(255) NOT NULL,
   `GENDER` varchar(255) DEFAULT NULL,
@@ -124,7 +141,8 @@ CREATE TABLE `USER_PROFILE` (
   `BLOG_COUNT` int(11) NOT NULL,
   `BLOG_URL` varchar(255) DEFAULT NULL,
   `BASKET_COUNT` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
   KEY `USER_ID` (`USER_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;
