@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 import requests # for retriving json data
 import json # for parse json (not used for nwo)
@@ -9,6 +12,7 @@ import time
 from pprint import pprint
 from pymongo import MongoClient
 import random
+from mariadb import MariaDB
 
 
 def LoadUserAgents(uafile='user_agents.txt'):
@@ -154,6 +158,7 @@ chinese_tags = [u'生活',u'健康']
 
 tags = [x.encode('utf-8') for x in chinese_tags]
 
+mariadb = MariaDB('ming','','cqavoting')
 
 # %E6%88%91%E5%A5%BD%E6%83%B3%E9%97%AE
 
@@ -195,6 +200,10 @@ for count in range(len(tags)):
                 question_content = res['result']
                 # with open('question.json','w') as file:
                 #     json.dump(question_content,file)
+                mariadb.insertQuestion(question_content)
+                # results = mariadb.select("SELECT * FROM QUESTION;")
+                # for x in range(len(results)):
+                #     print results[x][3].decode('utf-8')
 
 
                 query = {'id': q_id}
@@ -212,6 +221,7 @@ for count in range(len(tags)):
                 res = get_url_data(url,usring_proxy)
                 if res['ok']:
                     author_profile = res['result']
+                    mariadb.insertUSER_PROFILE(author_profile)
 
                     query = {'ukey':q_author_ukey}
                     content = {key:value for key,value in author_profile.iteritems() if key != 'ukey'}
@@ -245,6 +255,7 @@ for count in range(len(tags)):
 
                         for answer in answer_list:
                             a_id = answer['id']
+                            mariadb.insertAnswer(answer)
 
                             query={'id':a_id}
                             content = {key:value for key,value in answer.iteritems() if key != 'id'}
@@ -262,6 +273,7 @@ for count in range(len(tags)):
 
                             if res['ok']:
                                 author_profile = res['result']
+                                mariadb.insertUSER_PROFILE(author_profile)
 
                                 query = {'ukey':a_author_ukey}
                                 content = {key:value for key,value in author_profile.iteritems() if key != 'ukey'}
@@ -291,12 +303,15 @@ for count in range(len(tags)):
                                     response = db.supporterByAnswer.insert_many(supporter_list)
                                     s_sleep_time = random.choice(range(1,6))
                                     for supporter in supporter_list:
+                                        mariadb.insertAnswer_support(supporter,q_id)
+
                                         ukey = supporter['user_polling']['ukey']
                                         url = supporter['user_polling']['resource_url']
                                         res = get_url_data(url,usring_proxy)
                                         
                                         if res['ok']:
                                             supporter_profile = res['result']
+                                            mariadb.insertUSER_PROFILE(supporter_profile)
 
                                             query = {'ukey':ukey}
                                             content = {key:value for key,value in supporter_profile.iteritems() if key != 'ukey'}
@@ -368,3 +383,4 @@ for count in range(len(tags)):
 
 
 
+mariadb.kill()
