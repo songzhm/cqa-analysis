@@ -205,6 +205,19 @@ for count in range(len(tags)):
                 # for x in range(len(results)):
                 #     print results[x][3].decode('utf-8')
 
+                # insert tag tables
+
+                tags = question_content['tags']
+
+                for tag_content in tags:
+                    mariadb.insertTag(tag_content)
+
+                    question_tag_data = dict()
+                    question_tag_data['question_id'] = q_id
+                    question_tag_data['tag_name'] = tag_content['name']
+
+                    mariadb.insertQuestion_Tag(question_tag_data)
+
 
                 query = {'id': q_id}
                 content = {key:value for key,value in question_content.iteritems() if key != 'id'}

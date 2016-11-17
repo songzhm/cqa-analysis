@@ -20,6 +20,30 @@ class MariaDB():
             data['replies_count'],data['recommends_count']))
             
             self.mariadb_connection.commit()
+        
+    def insertTag(self,data):
+        data = self.transform_data(data)
+        self.cursor.execute("SELECT TAG_NAME FROM TAG WHERE TAG_NAME = %s ;" % (data['name']))
+
+        results = self.cursor.fetchall()
+
+        if len(results)==0:
+            self.cursor.execute("INSERT INTO TAG (TAG_NAME,SUMMARY,QUESTION_COUNT,FOLLOWER_COUNT, DATE_CREATED,DATE_MODIFIED,TAG_URL) \
+            VALUES(%s,%s,%s,%s,%s,%s,%s);" % (data['name'],data['summary'],'\''+str(data['questions_count'])+'\'','\''+str(data['followers_count'])+'\'',data['date_created'],data['date_modified'],data['url']))
+            
+            self.mariadb_connection.commit()
+
+    def insertQuestion_Tag(self,data):
+        data = self.transform_data(data)
+        self.cursor.execute("SELECT ID FROM QUESTION_TAG WHERE QUESTION_ID = %s AND TAG_NAME = %s ;" % (data['question_id'],data['tag_name']))
+        
+        results = self.cursor.fetchall()
+
+        if len(results)==0:
+            self.cursor.execute("INSERT INTO QUESTION_TAG (QUESTION_ID, TAG_NAME) VALUES(%s, %s) ;" % (data['question_id'], data['tag_name']))
+        
+            self.mariadb_connection.commit()
+        
 
     def insertAnswer(self,data):
         data = self.transform_data(data)
@@ -36,21 +60,21 @@ class MariaDB():
 
     def insertUSER_PROFILE(self,data):
         data = self.transform_data(data)
-        data['taggings'] = '\'' +str(data['taggings'])+'\''
+        data['taggings'] = '\''+ 'NULL' + '\''# '\'' +str(data['taggings'])+'\''
         self.cursor.execute("SELECT USER_ID FROM USER_PROFILE WHERE USER_ID = %s ;" % data['ukey'])
         results = self.cursor.fetchall()
     
         if len(results)==0:
-            # print "INSERT INTO USER_PROFILE (USER_ID, NICKNAME, GENDER, CITY, AREA, INTRODUCTION, MASTER_INTRODUCTION, QUESTION_COUNT, ANSWER_COUNT, ANSWER_SUPPORT_COUNT, FOLLOWER_COUNT, FOLLOWING_COUNT, ACTIVITY_COUNT, POST_COUNT, DATE_CREATED, USER_URL, RESOURCE_URL, BADGE_COPPER, BADGE_SILVER, BADGE_GOLD, BADGE_TOTAL, EVENT_VIDEO, TITLE_AUTHORIED, MASTER_CATEGORY, AMENDED_RELIABILITY, TITLE, BLOG_TITLE, TAGGING, BLOG_COUNT, BLOG_URL, BASKET_COUNT) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);" % (data['ukey'],data['nickname'],data['gender'],data['city'],data['area'],data['introduction'],data['master_introduction'],data['questions_count'],data['answers_count'],data['answer_supports_count'],data['followers_count'],data['followings_count'],data['activities_count'],data['posts_count'],data['date_created'],data['url'],data['resource_url'],data['badge_counts']['copper'],data['badge_counts']['silver'],data['badge_counts']['gold'],data['badge_counts']['total'],data['event_videos_count'],data['is_title_authorized'],data['master_category'],data['amended_reliability'],data['title'],data['blog_title'],data['taggings'],data['blogs_count'],data['blog_url'],data['baskets_count'])
+            # print "INSERT INTO USER_PROFILE (USER_ID, NICKNAME, GENDER, CITY, AREA, INTRODUCTION, MASTER_INTRODUCTION, QUESTION_COUNT, ANSWER_COUNT, ANSWER_SUPPORT_COUNT, FOLLOWER_COUNT, FOLLOWING_COUNT, ACTIVITY_COUNT, POST_COUNT, DATE_CREATED, USER_URL, RESOURCE_URL, BADGE_COPPER, BADGE_SILVER, BADGE_GOLD, BADGE_TOTAL, EVENT_VIDEO, TITLE_AUTHORIED, MASTER_CATEGORY, AMENDED_RELIABILITY, TITLE, BLOG_TITLE, TAGGING, BLOG_COUNT, BLOG_URL, BASKET_COUNT) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);" % (data['ukey'],data['nickname'],data['gender'],data['city'],data['area'],data['introduction'],data['master_introduction'],data['questions_count'],data['answers_count'],data['answer_supports_count'],data['followers_count'],data['followings_count'],data['activities_count'],data['posts_count'],data['date_created'],data['url'],data['resource_url'],data['badge_counts']['copper'],data['badge_counts']['silver'],data['badge_counts']['gold'],data['badge_counts']['total'],data['event_videos_count'],data['is_title_authorized'],data['master_category'],data['amended_reliability'],data['title'],data['blog_title'],data['taggings'],'\''+str(data['blogs_count'])+'\'',data['blog_url'],data['baskets_count'])
 
-            self.cursor.execute("INSERT INTO USER_PROFILE (USER_ID, NICKNAME, GENDER, CITY, AREA, INTRODUCTION, MASTER_INTRODUCTION, QUESTION_COUNT, ANSWER_COUNT, ANSWER_SUPPORT_COUNT, FOLLOWER_COUNT, FOLLOWING_COUNT, ACTIVITY_COUNT, POST_COUNT, DATE_CREATED, USER_URL, RESOURCE_URL, BADGE_COPPER, BADGE_SILVER, BADGE_GOLD, BADGE_TOTAL, EVENT_VIDEO, TITLE_AUTHORIED, MASTER_CATEGORY, AMENDED_RELIABILITY, TITLE, BLOG_TITLE, TAGGING, BLOG_COUNT, BLOG_URL, BASKET_COUNT) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);" % (data['ukey'],data['nickname'],data['gender'],data['city'],data['area'],data['introduction'],data['master_introduction'],data['questions_count'],data['answers_count'],data['answer_supports_count'],data['followers_count'],data['followings_count'],data['activities_count'],data['posts_count'],data['date_created'],data['url'],data['resource_url'],data['badge_counts']['copper'],data['badge_counts']['silver'],data['badge_counts']['gold'],data['badge_counts']['total'],data['event_videos_count'],data['is_title_authorized'],data['master_category'],data['amended_reliability'],data['title'],data['blog_title'],data['taggings'],data['blogs_count'],data['blog_url'],data['baskets_count']))
+            self.cursor.execute("INSERT INTO USER_PROFILE (USER_ID, NICKNAME, GENDER, CITY, AREA, INTRODUCTION, MASTER_INTRODUCTION, QUESTION_COUNT, ANSWER_COUNT, ANSWER_SUPPORT_COUNT, FOLLOWER_COUNT, FOLLOWING_COUNT, ACTIVITY_COUNT, POST_COUNT, DATE_CREATED, USER_URL, RESOURCE_URL, BADGE_COPPER, BADGE_SILVER, BADGE_GOLD, BADGE_TOTAL, EVENT_VIDEO, TITLE_AUTHORIED, MASTER_CATEGORY, AMENDED_RELIABILITY, TITLE, BLOG_TITLE, TAGGING, BLOG_COUNT, BLOG_URL, BASKET_COUNT) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);" % (data['ukey'],data['nickname'],data['gender'],data['city'],data['area'],data['introduction'],data['master_introduction'],data['questions_count'],data['answers_count'],data['answer_supports_count'],data['followers_count'],data['followings_count'],data['activities_count'],data['posts_count'],data['date_created'],data['url'],data['resource_url'],data['badge_counts']['copper'],data['badge_counts']['silver'],data['badge_counts']['gold'],data['badge_counts']['total'],data['event_videos_count'],data['is_title_authorized'],data['master_category'],data['amended_reliability'],data['title'],data['blog_title'],data['taggings'],'\''+str(data['blogs_count'])+'\'',data['blog_url'],data['baskets_count']))
 
             self.mariadb_connection.commit()
 
 
     def insertAnswer_support(self,data,question_id):
         data = self.transform_data(data)
-        self.cursor.execute("SELECT QUESTION_ID, ANSWER_ID, USER_ID FROM ANSWER_SUPPORT WHERE QUESTION_ID = %s AND ANSWER_ID = %s AND USER_ID = %s ;" % ('\''+str(question_id)+'\'', data['answer_id'],'\''+data['user_polling']['ukey']+'\''))
+        self.cursor.execute("SELECT QUESTION_ID, ANSWER_ID, USER_ID FROM ANSWER_SUPPORT WHERE QUESTION_ID = %s AND ANSWER_ID = %s AND USER_ID = %s ;" % ('\''+str(question_id)+'\'', data['answer_id'],'\''+str(data['user_polling']['ukey'])+'\''))
         results = self.cursor.fetchall()
     
         if len(results)==0:

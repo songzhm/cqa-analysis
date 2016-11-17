@@ -11,7 +11,7 @@
  Target Server Version : 50716
  File Encoding         : utf-8
 
- Date: 11/04/2016 19:11:14 PM
+ Date: 11/16/2016 21:58:14 PM
 */
 
 SET NAMES utf8mb4;
@@ -37,11 +37,7 @@ CREATE TABLE `ANSWER` (
   `ANSWER_URL` varchar(255) NOT NULL,
   `OPPOSING_COUNT` int(11) NOT NULL,
   `BURYING_COUNT` int(11) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `QUESTION_ID` (`QUESTION_ID`),
-  KEY `USER_ID` (`USER_ID`),
-  KEY `ANSWER_ID` (`ANSWER_ID`)
-
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -55,10 +51,7 @@ CREATE TABLE `ANSWER_SUPPORT` (
   `QUESTION_ID` varchar(255) NOT NULL,
   `DATA_CREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `OPINION` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ANSWER_ID` (`ANSWER_ID`),
-  KEY `USER_ID` (`USER_ID`)
-
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -79,10 +72,18 @@ CREATE TABLE `QUESTION` (
   `QUESTION_URL` varchar(255) NOT NULL,
   `REPLY_COUNT` int(11) DEFAULT NULL,
   `RECOMMEND_COUNT` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `QUESTION_ID` (`QUESTION_ID`),
-  KEY `USER_ID` (`USER_ID`)
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+--  Table structure for `QUESTION_TAG`
+-- ----------------------------
+DROP TABLE IF EXISTS `QUESTION_TAG`;
+CREATE TABLE `QUESTION_TAG` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `QUESTION_ID` varchar(255) DEFAULT NULL,
+  `TAG_NAME` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -91,7 +92,6 @@ CREATE TABLE `QUESTION` (
 DROP TABLE IF EXISTS `TAG`;
 CREATE TABLE `TAG` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `QUESTION_ID` varchar(255) NOT NULL,
   `TAG_NAME` varchar(255) NOT NULL,
   `SUMMARY` varchar(255) NOT NULL,
   `QUESTION_COUNT` int(11) NOT NULL,
@@ -99,9 +99,7 @@ CREATE TABLE `TAG` (
   `DATE_CREATED` datetime NOT NULL,
   `DATE_MODIFIED` datetime NOT NULL,
   `TAG_URL` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `QUESTION_ID` (`QUESTION_ID`)
-
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -141,8 +139,7 @@ CREATE TABLE `USER_PROFILE` (
   `BLOG_COUNT` int(11) NOT NULL,
   `BLOG_URL` varchar(255) DEFAULT NULL,
   `BASKET_COUNT` int(11) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `USER_ID` (`USER_ID`)
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;
