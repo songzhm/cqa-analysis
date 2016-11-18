@@ -382,8 +382,8 @@ for count in range(len(tags)):
                     for ss in range(q_sleep_time):
                         # print 'break: '+ str(q_sleep_time-ss)
                         time.sleep(1) 
-            print 'items retrived and stored:' + str(question_list)
-            print 'items left: ' + str(total - question_list)
+            print 'items retrived and stored:' + str(len(question_list))
+            print 'items left: ' + str(total - len(question_list))
         else:
             print 'question list is empty!'
 
